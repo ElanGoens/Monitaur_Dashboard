@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MonitorComponent } from './monitor.component';
-import { MaterialModule } from '../material/material.module';
+import { MonitorViewComponent } from '../monitor-view/monitor-view.component';
 
 
 @NgModule({
-  declarations: [MonitorComponent],
+  declarations: [MonitorComponent, MonitorViewComponent],
   imports: [
-    CommonModule,
-    MaterialModule
+    CommonModule
   ],
-  exports: [MonitorComponent]
+  exports: [MonitorComponent, MonitorViewComponent]
 })
 export class MonitorModule { }

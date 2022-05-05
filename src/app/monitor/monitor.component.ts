@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-monitor',
@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./monitor.component.css']
 })
 export class MonitorComponent implements OnInit {
-  name: string;
+  @Input() monitor: any;
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }
