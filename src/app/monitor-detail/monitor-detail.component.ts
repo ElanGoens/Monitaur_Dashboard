@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { MonitorDataService } from '../monitor-data.service';
 
 @Component({
   selector: 'app-monitor-detail',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MonitorDetailComponent implements OnInit {
 
-  constructor() { }
+  public monitor: any;
+
+  constructor(private route: ActivatedRoute, private monitorService: MonitorDataService) { }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.monitorService.getMonitor$(id).subscribe(item => (this.monitor = item.data));
   }
 
 }

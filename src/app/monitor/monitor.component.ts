@@ -9,7 +9,7 @@ import { Router } from'@angular/router';
 export class MonitorComponent implements OnInit {
   @Input() public monitor: any;
 
-  constructor() {
+  constructor(private _router: Router) {
 
   }
 
@@ -17,7 +17,8 @@ export class MonitorComponent implements OnInit {
   }
 
   showDetails(){
-
+    console.log(this.monitor.id);
+    this._router.navigateByUrl(`/monitor/detail/${this.monitor.id}`)
   }
 
 }
