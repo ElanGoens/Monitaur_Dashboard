@@ -19,7 +19,7 @@ export class MonitorViewComponent implements OnInit {
   ngOnInit(): void {}
 
   get monitors$(): any {
-    console.log(this._monitors$);
+    //console.log(this._monitors$);
     return this._monitors$;
   }
 

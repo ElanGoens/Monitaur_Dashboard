@@ -27,7 +27,9 @@ export class MonitorAddEditComponent implements OnInit {
 
     this.form = new FormGroup({
       name: new FormControl('test'),
-      url: new FormControl('url')
+      url: new FormControl('url'),
+      interval: new FormControl(''),
+      contact: new FormControl('')
     })
   }
 

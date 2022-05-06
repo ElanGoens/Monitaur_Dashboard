@@ -20,4 +20,8 @@ export class MonitorDataService {
   get monitors$() : Observable<any>{
     return this.http.get('http://monitaur.docker.localhost:81/jsonapi/node/monitor');
   }
+
+  getContact(id: string) : Observable<any> {
+    return this.http.get(`http://monitaur.docker.localhost:81/jsonapi/node/contact/${id}`);
+  }
 }
