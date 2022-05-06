@@ -16,9 +16,7 @@ export class MonitorViewComponent implements OnInit {
     _monitorService.monitors$.subscribe(val => this._monitors$ = val.data);
   }
 
-  ngOnInit(): void {
-    //this._fetchMonitors$.subscribe(val => console.log(val));
-  }
+  ngOnInit(): void {}
 
   get monitors$(): any {
     console.log(this._monitors$);

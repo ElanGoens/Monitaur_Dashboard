@@ -12,6 +12,11 @@ export class MonitorDataService {
   constructor(private http: HttpClient) {
   }
 
+
+  getMonitor$(id: string) : Observable<any>{
+    return this.http.get(`http://monitaur.docker.localhost:81/jsonapi/node/monitor/${id}`);
+  }
+
   get monitors$() : Observable<any>{
     return this.http.get('http://monitaur.docker.localhost:81/jsonapi/node/monitor');
   }

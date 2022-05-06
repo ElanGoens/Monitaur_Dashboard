@@ -5,6 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MonitorModule } from './monitor/monitor.module';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+import { MonitorViewComponent } from './monitor-view/monitor-view.component';
+
+const appRoutes: Routes = [
+  { path: 'monitor/view', component: MonitorViewComponent },
+  //{ path: 'monitor/detail/:id'},
+  { path: '', redirectTo: 'monitor/view', pathMatch: 'full' },
+]
 
 
 @NgModule({
@@ -15,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     MonitorModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from'@angular/router';
 
 @Component({
   selector: 'app-monitor',
@@ -6,13 +7,17 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./monitor.component.css']
 })
 export class MonitorComponent implements OnInit {
-  @Input() monitor: any;
+  @Input() public monitor: any;
 
   constructor() {
 
   }
 
   ngOnInit(): void {
+  }
+
+  showDetails(){
+
   }
 
 }
