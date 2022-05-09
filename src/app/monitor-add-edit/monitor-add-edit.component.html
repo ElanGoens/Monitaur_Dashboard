@@ -25,6 +25,13 @@
                 <option value="86400">1 day</option>
             </select>
         </div>
+
+        <div class="form-group">
+            <label>Contact</label>
+            <select  formControlName="contact" class="form-control">
+                <option *ngFor="let contact of contacts" >{{contact.attributes.title}}</option>
+            </select>
+        </div>
     </form>
 
 </div>

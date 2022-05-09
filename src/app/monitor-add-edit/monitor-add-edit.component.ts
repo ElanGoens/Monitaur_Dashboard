@@ -12,6 +12,7 @@ export class MonitorAddEditComponent implements OnInit {
   form: FormGroup;
   id: string;
   addMode: boolean;
+  public contacts: any[];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -23,7 +24,8 @@ export class MonitorAddEditComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.addMode = !this.id;
-
+    this.monitorService.contacts$.subscribe(value => (this.contacts = value.data));
+    console.log(this.contacts);
 
     this.form = new FormGroup({
       name: new FormControl('test'),
